@@ -1,25 +1,33 @@
 <template>
-  <h1>Home page</h1>
+    <div class="container">
+        <div class="task">
+            <p class="task-description">Task #1</p>
+            <p>Create a class <code>Car</code> with a string public string variable <code>motor</code>.</p>
+        </div>
+        <div class="code">
+            <textarea class="code-input" placeholder="Write your code here..."></textarea>
+            <button class="submit-button" @click="submit">Submit</button>
+        </div>
+    </div>
 </template>
 
 <script>
-import API from '@/api';
-import { defineComponent } from 'vue';
-
 export default {
-  data() {
-    return {
-      posts: []
+    methods: {
+        submit() {
+            // Add your submit logic here
+            window.location.href='/send';
+        },
+        unauthenticate() {
+            // Add your unauthenticate logic here
+            window.location.href='/unauthenticate';
+        }
     }
-  },
-  async created() {
-    
-  }
-};
+}
 </script>
 
 <style scoped>
-body {
+        body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
@@ -38,6 +46,8 @@ body {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 20px;
+            margin: 150px auto;
+
         }
         
         .task-description {
@@ -95,26 +105,5 @@ body {
             .task, .code {
                 width: 100%;
             }
-        }
-
-        .button-container {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            margin: 10px;
-        }
-
-        .auth-button {
-            background-color: #af4c8c; /* Green */
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 12px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
         }
 </style>
