@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AddPost from '../views/AddPost.vue'
 import Task1 from '../views/Task1.vue'
 import Task2 from '../views/Task2.vue'
+import Connected from '../views/Connected.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/tasks/2',
     name: 'task-2',
     component: Task2
+  },
+  {
+    path: '/connected',
+    name: 'connected',
+    component: Connected
   },
   {
     path: '/about',

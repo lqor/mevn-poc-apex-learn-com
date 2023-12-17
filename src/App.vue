@@ -68,10 +68,11 @@
       },
       async connect() {
         try {
-          const response = await axios.get('http://localhost:4000/oauth2/auth');
-          // Handle success, e.g. save the token, navigate to a different page, etc.
+            const response = await axios.get('http://localhost:4000/oauth2/auth-url');
+            console.log('Redirecting to:', response.data);
+            window.location.href = response.data;
         } catch (error) {
-          console.error('Authentication failed:', error);
+            console.error('Authentication failed:', error);
         }
       }
     }
